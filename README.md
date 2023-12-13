@@ -1,4 +1,4 @@
-## Metal version
+## Metal Prototype
 
 ![](images/metal1.png)
 
