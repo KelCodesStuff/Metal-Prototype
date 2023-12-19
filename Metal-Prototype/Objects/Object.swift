@@ -47,7 +47,7 @@ class Object {
 	}
 	
     // Update method to compute transformations for the current frame
-	func update(camera: Camera, vpLight: matrix_float4x4){
+	func update(camera: Camera, vpLight: matrix_float4x4) {
 		// Compute all transformations for this frame.
 		parameters.mv = matrix_multiply(camera.viewMatrix, self.model)
 		parameters.invmv = parameters.mv.inverse.transpose
@@ -56,7 +56,7 @@ class Object {
 	}
 	
     // Method to encode rendering commands for the object
-	func encode(renderEncoder: MTLRenderCommandEncoder, constants: GlobalConstants){
+	func encode(renderEncoder: MTLRenderCommandEncoder, constants: GlobalConstants) {
 		renderEncoder.pushDebugGroup("Draw " + name)
 		
 		// Set buffers
@@ -81,7 +81,7 @@ class Object {
 	}
 	
     // Method to encode shadow rendering commands
-	func encodeShadow(renderEncoder: MTLRenderCommandEncoder){
+	func encodeShadow(renderEncoder: MTLRenderCommandEncoder) {
 		renderEncoder.pushDebugGroup("Shadow " + name)
 	
 		// Set buffers
@@ -98,7 +98,7 @@ class Object {
 	}
 	
     // Placeholder method for loading textures (to be overridden by subclasses)
-	func loadTextures(device: MTLDevice){
+	func loadTextures(device: MTLDevice) {
 		// Has to be overriden by subclasses
 		fatalError("Use a subclass implementing texture management.")
 	}

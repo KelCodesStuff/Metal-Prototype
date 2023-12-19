@@ -127,7 +127,7 @@ class Mesh {
 	}
 	
     // Centers and scales the mesh to fit within a unit cube
-	public func centerAndUnit(){
+	public func centerAndUnit() {
         // Translation and scaling logic to center and fit the mesh within a unit cube
 		var centroid = SIMD3<Float>(0.0,0.0,0.0)
 		
