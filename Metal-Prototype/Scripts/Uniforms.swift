@@ -8,7 +8,7 @@
 import Foundation
 import simd
 
-// Transformation matrices specific to the object.
+// Transformation matrices specific to the object
 struct ObjectConstants {
 	var mvp = matrix_identity_float4x4
 	var invmv = matrix_identity_float4x4
@@ -17,13 +17,13 @@ struct ObjectConstants {
 }
 
 
-// Material parameters.
+// Material parameters
 struct MaterialConstants {
 	var shininess : Int = 0
 }
 
 
-// Scene parameters.
+// Scene parameters
 struct GlobalConstants {
-	var lightDir = float4(0.0)
+    var lightDir = SIMD4<Float>(repeating: 0.0)
 }
