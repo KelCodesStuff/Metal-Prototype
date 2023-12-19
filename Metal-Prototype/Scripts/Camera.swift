@@ -16,9 +16,9 @@ class Camera {
 	public var isMoving = false
 	private var clickPoint = NSPoint.zero
 	
-	private var eye : float3
-	private var center : float3 = float3(0.0,0.0,0.0)
-	private var up : float3 = float3(0.0,1.0,0.0)
+	private var eye : SIMD3<Float>
+	private var center : SIMD3<Float> = SIMD3<Float>(0.0,0.0,0.0)
+	private var up : SIMD3<Float> = SIMD3<Float>(0.0,1.0,0.0)
 	
 	private var horizontalAngle : Float = 0.0
 	private var verticalAngle : Float = 0.0
@@ -28,7 +28,7 @@ class Camera {
 	
 	init(width: CGFloat, height: CGFloat ){
 		// Setup view matrix.
-		eye = radius*float3(cos(verticalAngle)*cos(horizontalAngle), sin(verticalAngle), cos(verticalAngle)*sin(horizontalAngle))
+		eye = radius*SIMD3<Float>(cos(verticalAngle)*cos(horizontalAngle), sin(verticalAngle), cos(verticalAngle)*sin(horizontalAngle))
 		viewMatrix = lookAtMatrix(eye: eye, target: center, up: up)
 		// Create projection matrix.
 		projectionMatrix = perspectiveMatrix(fov: 1.3, aspect: Float(width)/Float(height), near: 0.01, far: 100.0)
@@ -37,7 +37,7 @@ class Camera {
 	
 	func update(step : TimeInterval) {
 		// Update the camera postion, and the view matrix.
-		eye = radius*float3(cos(verticalAngle)*cos(horizontalAngle), sin(verticalAngle), -cos(verticalAngle)*sin(horizontalAngle))
+		eye = radius*SIMD3<Float>(cos(verticalAngle)*cos(horizontalAngle), sin(verticalAngle), -cos(verticalAngle)*sin(horizontalAngle))
 		viewMatrix = lookAtMatrix(eye: eye, target: center, up: up)
 	}
 	
