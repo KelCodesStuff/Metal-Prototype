@@ -1,22 +1,26 @@
-## Metal Prototype
+# Metal Prototype
 
-[![CircleCI](https://circleci.com/gh/KelCodesStuff/Neon-Casino.svg?style=shield&circle-token=4d334ff549a0ff07a72acbd9727bc70028b54c77)](https://app.circleci.com/pipelines/github/KelCodesStuff/Neon-Casino)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/KelCodesStuff/Metal-Prototype/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/KelCodesStuff/Metal-Prototype/tree/main)
 
 <img src="https://img.shields.io/badge/Swift-5.8-orange.svg"/>
 <img src="https://img.shields.io/badge/Platforms-macOS-brightgreen.svg?style=flat" alt="Mac + Linux"/>
 
-[![TestFlight](https://img.shields.io/badge/Join%20The%20TestFlight-blue)](https://testflight.apple.com/)
+#
 
+Metal is a graphics API developed by Apple for the iOS and macOS platforms. It offers an object-oriented interface to interact with the GPU in an asynchronous manner. 
 
-![](images/metal1.png)
+One key feature is the upfront validation of rendering commands before execution. This approach allows for the accumulation of rendering commands in a buffer, enabling concatenation, simplification, and reordering of commands. 
 
-Metal is a graphics API developed by Apple for the iOS and macOS platforms. It provides an object-oriented access to the GPU in an asynchronous way. Validation is performed ahead of execution, accumulating rendering commands in a buffer, which allows for concatenations, simplifications and reordering of commands. 
+Metal is designed to provide high-performance graphics and compute capabilities for applications, particularly in scenarios where fine control over GPU resources and parallel processing is essential.
 
-![](images/metal2.png)
+![](Images/metal-scene1.png)
 
-Shaders are written in a subset of C++ with an additional library providing shader-specific functions. They are compiled at the same time as the CPU code. Documentation can be found on the Apple Developer site and in WWDC videos.
+![](Images/metal-scene2.png)
 
-![](images/metal3.png)
-*Visualizing the rendering passes and the data on the GPU with the Xcode graphics debugger.*
+#
+
+*Visualizing the rendering passes and the data on the GPU with the Metal debugger.*
+
+![](Images/metal-scene4.png)
 
 
